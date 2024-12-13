@@ -7,6 +7,14 @@ document.getElementById('add-task-btn').addEventListener('click', () => {
         const li = document.createElement('li');
         li.textContent = taskInput.value;
 
-       
+      
+       const deleteBtn = document.createElement('button');
+       deleteBtn.textContent = 'Sil';
+       deleteBtn.addEventListener('click', () => li.remove());
+
+       li.appendChild(deleteBtn);
+       taskList.appendChild(li);
+
+       taskInput.value = '';
     }
 });
